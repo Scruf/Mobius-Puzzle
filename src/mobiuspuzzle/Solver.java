@@ -30,13 +30,13 @@ public class Solver {
                System.out.println(i);
                ArrayList<Integer> nextConfig = new ArrayList(element);
                nextConfig.add(i);
-               if(nextConfig.get(0)==puzzle.getGoal()){
+               if(i==puzzle.getGoal()){
                    element=nextConfig;
                    found=true;
                    break;
                }
                else{
-                   element.add(nextConfig.get(0)); 
+                  queue.add(nextConfig);
                }
            }
            

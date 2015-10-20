@@ -22,20 +22,24 @@ public  class Mobius implements Puzzle {
     }
 
     @Override
-    public ArrayList<Integer> getNeighbors(int config) {
-       
-        ArrayList<Integer> neighbors = new ArrayList<Integer>();
-        if(range==1){
-            neighbors.add(config);
-            return neighbors;
+    public java.util.ArrayList<java.lang.Integer> getNeighbors(int config) {
+       if(config<1)
+           return null;
+       if(config>range)
+           return null;
+       ArrayList<Integer> neighbor = new ArrayList<Integer>();
+       if(config==range)
+           neighbor.add(1);
+       if(config==1)
+           neighbor.add(range);
+       else{
+           int leftNeighbor = config-1;
+           config=config+1;
+           int rightNeighbor = config + 1;
+           neighbor.add(leftNeighbor);
+           neighbor.add(rightNeighbor);
         }
-        else{
-            int leftNeighbor = config-1;
-            int rightNeighbor = config+1;
-            neighbors.add(leftNeighbor);
-            neighbors.add(rightNeighbor);
-            return neighbors;
-        }
+       return neighbor;
     }
 
     @Override
