@@ -7,8 +7,10 @@ package mobiuspuzzle;
 
 /**
  *
- * @author ekozi
+ * @author Egor Kozitski
  */
 public interface Puzzle {
-    
+    public int getGoal();
+    public java.util.ArrayList<java.lang.Integer> getNeighbors(int config);
+    public int getStart();
 }
